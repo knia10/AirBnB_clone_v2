@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env bash
 # This is a a Bash script that sets up your web servers for the deployment of web_static.
 
 # Install Nginx if it not already installed
