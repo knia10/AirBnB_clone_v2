@@ -29,12 +29,20 @@ def do_pack():
     minute = time.minute
     second = time.second
 
-    time_file = local("tar -cvzf versions/web_static_{}{}{}{}{}{}.tgz\
+    local("tar -cvzf versions/web_static_{}{}{}{}{}{}.tgz\
                        web_static".format(time.year, time.month, time.day,
-                      time.hour, time.minute, time.second))
+                                          time.hour, time.minute, time.second))
+
+    time_file = "versions/web_static_{}{}{}{}{}{}.tgz".format(
+                                                              time.year,
+                                                              time.month,
+                                                              time.day,
+                                                              time.hour,
+                                                              time.minute,
+                                                              time.second)
 
     if exists(time_file) and getsize(time_file) > 0:
-       return time_file
+        return time_file
     return None
 
 
@@ -58,7 +66,7 @@ def do_deploy(archive_path):
         run("ln -s {}{}/ /data/web_static/current".format(data_releases,
                                                           no_extend))
         return True
-    except:
+    except Exception as e:
         return False
 
 
