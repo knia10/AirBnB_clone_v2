@@ -7,6 +7,7 @@ and distributes an archive to your web servers, using the function deploy
 
 from datetime import datetime
 from fabric.api import local, env, put, run
+from os.path import getsize
 
 env.hosts = ['35.237.215.97', '35.231.150.24']
 env.user = "ubuntu"
@@ -32,9 +33,9 @@ def do_pack():
                        web_static".format(time.year, time.month, time.day,
                       time.hour, time.minute, time.second))
 
-    if time_file.failed:
-        return None
-    return time_file
+    if time_file.success and getsize(time_file) > 0:
+       return time_file
+     return None
 
 
 def do_deploy(archive_path):
