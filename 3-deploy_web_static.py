@@ -35,7 +35,7 @@ def do_pack():
 
     if time_file.success and getsize(time_file) > 0:
        return time_file
-     return None
+    return None
 
 
 def do_deploy(archive_path):
