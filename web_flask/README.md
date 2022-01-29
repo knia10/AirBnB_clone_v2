@@ -44,6 +44,6 @@
 $ pip3 install Flask
 ```
 
-<img src = "https://s3.amazonaws.com/intranet-projects-files/concepts/74/hbnb_step3.png" width = 300px length = 400px>
+<img src = "https://s3.amazonaws.com/intranet-projects-files/concepts/74/hbnb_step3.png" width = 500px length = 400px>
 
 By Estefania Ruiz 🦌 from Holberton School🪐
